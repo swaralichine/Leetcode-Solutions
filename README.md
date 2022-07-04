@@ -3,7 +3,7 @@ Solutions of Neetcode problems in C++
 
 I will be posting solutions of Neetcode problems as and when I will solve the problems.
 
-The categories are :
+The problems are solved in order of :
 
 1. Arrays & Hashing
 2. Two Pointers
