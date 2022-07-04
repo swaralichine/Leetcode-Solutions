@@ -3,7 +3,7 @@ Solutions of Neetcode problems in C++
 
 I will be posting solutions of Neetcode problems as and when I will solve the problems.
 
-The problems are solved in order of :
+The problems are of type :
 
 1. Arrays & Hashing
 2. Two Pointers
@@ -23,3 +23,6 @@ The problems are solved in order of :
 16. Intervals
 17. Math & Geometry
 18. Bit Manipulation
+
+
+Happy Coding!
