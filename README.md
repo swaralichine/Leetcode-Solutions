@@ -1,7 +1,7 @@
 # Neetcode-Solutions
 Solutions of Neetcode problems in C++
 
-I will be posting solutions of Neetcode problems as I will solve the problems.
+I will be posting solutions of Neetcode problems as and when I will solve the problems.
 
 The categories are :
 
