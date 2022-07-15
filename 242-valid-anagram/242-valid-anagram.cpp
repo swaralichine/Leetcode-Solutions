@@ -3,19 +3,22 @@ class Solution
 public:
     bool isAnagram(string s, string t) 
     {
+       map<int,int> count;
        if(s.length() != t.length())
        {
            return false;
        }
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-        
         for(int i=0;i<s.length();i++)
         {
-            if(s[i]!=t[i])
+            count[s[i]]++;
+        }
+        for(int i=0;i<t.length();i++)
+        {
+            if(count[t[i]] <=0)
             {
                 return false;
             }
+            count[t[i]]--;
         }
         return true;
     }
