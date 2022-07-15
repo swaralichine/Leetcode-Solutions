@@ -9,19 +9,16 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution 
-{
+class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) 
     {
-        if(root==NULL)
-        {
+        if(!root)
             return root;
-        }
-        invertTree(root->left);
-        invertTree(root->right);
-        swap(root->left,root->right);
-        
+        TreeNode *left = invertTree(root->left); // Getting Left Side of the Tree
+        TreeNode *right = invertTree(root->right); // Getting Right Side of the Tree
+        root->left = right; // putting Right Side to Left Side of the Tree
+        root->right = left; // putting Left Side to Right Side of the Tree
         return root;
     }
 };
