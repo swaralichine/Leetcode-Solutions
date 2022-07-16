@@ -3,16 +3,23 @@ class Solution
 public:
     bool isSubsequence(string s, string t) 
     {
-        int n=s.length(),m=t.length();
-        int j=0;
-        for(int i=0;i<m and j<n;i++)
+        int i=0,j=0;
+        while(i < t.size() and j<s.size())
         {
-            if(s[j]==t[i])
+            if(t[i] == s[j])
             {
                 j++;
             }
+            i++;
         }
-        return(j==n);
+        if(j==s.size())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 };
 
