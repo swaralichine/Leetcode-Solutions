@@ -6,6 +6,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+//Trick is to copy the contents of the next node in the node to be deleted
 class Solution 
 {
 public:
