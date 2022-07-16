@@ -3,17 +3,17 @@
 class Solution 
 {
 public:
-    void dfs(vector<vector<char>>& board, int row, int col, int i, int j)
+    void dfs(vector<vector<char>>& board,int i, int j)
     {
-        if(i<0||i>=row||j<0||j>=col|| board[i][j]!='O')
+        if(i<0||i>=board.size()||j<0||j>=board[0].size() || board[i][j]!='O')
             return;
         
         board[i][j]='S';
         
-        dfs(board,row,col,i+1,j);
-        dfs(board,row,col,i-1,j);
-        dfs(board,row,col,i,j+1);
-        dfs(board,row,col,i,j-1);
+        dfs(board,i+1,j);
+        dfs(board,i-1,j);
+        dfs(board,i,j+1);
+        dfs(board,i,j-1);
     }
     void solve(vector<vector<char>>& board) 
     {
@@ -25,7 +25,7 @@ public:
             {
                if(i==0||j==0|| i==row-1||j==col-1) //boundary cells
                {
-                   dfs(board,row,col,i,j);
+                   dfs(board,i,j);
                }
             }
          }
