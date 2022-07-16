@@ -2,24 +2,17 @@ class Solution {
 public:
     void dfs(vector<vector<char>>& grid,int x,int y)
     {
-        grid[x][y]='0';
+        if(x < 0 || y < 0 || x >= grid.size() || y >=grid[0].size() || grid[x][y]!='1')
+        {
+            return;
+        }
+        grid[x][y]=0;
+        dfs(grid,x-1,y);
+        dfs(grid,x+1,y);
+        dfs(grid,x,y-1);
+        dfs(grid,x,y+1);
     
-        if(x+1 <grid.size() && grid[x+1][y]=='1')
-        {
-            dfs(grid,x+1,y);
-        }
-        if(x-1 >=0 && grid[x-1][y]=='1')
-        {
-            dfs(grid,x-1,y);
-        }
-        if(y+1 <grid[0].size() && grid[x][y+1]=='1')
-        {
-            dfs(grid,x,y+1);
-        }
-        if(y-1 >=0 && grid[x][y-1]=='1')
-        {
-            dfs(grid,x,y-1);
-        }
+        
     }  
         
     int numIslands(vector<vector<char>>& grid) 
