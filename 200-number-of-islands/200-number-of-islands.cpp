@@ -7,30 +7,21 @@ public:
             return;
         }
         grid[x][y]=0;
+        
         dfs(grid,x-1,y);
         dfs(grid,x+1,y);
         dfs(grid,x,y-1);
-        dfs(grid,x,y+1);
-    
-        
+        dfs(grid,x,y+1); 
     }  
         
     int numIslands(vector<vector<char>>& grid) 
     { 
-      int H = grid.size();
-      if(!H)
-      {
-          return 0;
-      }
-        int W=grid[0].size();
-        if(!W)
-        {
-            return 0;
-        }
+      int n=grid.size();
+        int m=grid[0].size();
         int noofislands=0;
-        for(int i=0;i<H;i++)
+        for(int i=0;i<n;i++)
         {
-            for(int j=0;j<W;j++)
+            for(int j=0;j<m;j++)
             {
                 if(grid[i][j]=='1')
                 {
