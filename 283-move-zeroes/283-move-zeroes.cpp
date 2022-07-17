@@ -6,17 +6,12 @@ class Solution
 public:
 void moveZeroes(vector<int>& nums) 
 {
-   int lastNonZeroFoundAt=0;
-    for(int i=0;i<nums.size();i++)
+    for (int lastNonZeroFoundAt = 0, cur = 0; cur < nums.size(); cur++)
     {
-        if(nums[i]!=0)
+        if (nums[cur] != 0) 
         {
-            nums[lastNonZeroFoundAt++]=nums[i];
+            swap(nums[lastNonZeroFoundAt++], nums[cur]);
         }
     }
-    for(int i=lastNonZeroFoundAt;i<nums.size();i++)
-    {
-        nums[i]=0;
-    }
- }   
+}
 };
