@@ -1,0 +1,1 @@
+select seller_id from sales group by seller_id having sum(price) = (select sum(price) as maxprice from sales group by seller_id ORDER BY maxPrice DESC LIMIT 1 );
