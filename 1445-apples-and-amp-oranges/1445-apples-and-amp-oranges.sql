@@ -1,6 +1,7 @@
 select sale_date,
-sum(if(fruit='apples',1,-1)*sold_num) as diff 
+sum(case when fruit='apples' then 1 else -1 end * sold_num) as diff 
 from sales
-group by 1;
+group by 1
+order by 1;
 
 
