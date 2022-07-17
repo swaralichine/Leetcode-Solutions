@@ -7,13 +7,13 @@ public:
         int maxprofit=0;
         for(int i=0;i<prices.size();i++)
         {
-            if(prices[i] < minprice)
+            if(minprice>prices[i])
             {
-                minprice = prices[i];
+                minprice=prices[i];
             }
-            else if(prices[i] - minprice > maxprofit)
+            else if(prices[i]-minprice>maxprofit)
             {
-                maxprofit = prices[i] - minprice;
+                maxprofit=prices[i]-minprice;
             }
         }
         return maxprofit;
