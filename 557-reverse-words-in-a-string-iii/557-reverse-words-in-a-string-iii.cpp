@@ -18,7 +18,7 @@ public:
             right++;
         }
 
-        reverseWord(s, left, right - 1);
+        reverseWord(s, left, right - 1);  //for last word 
         
         return s;
     }
