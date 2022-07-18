@@ -21,11 +21,15 @@ public:
 			// If the number is equal to 1, 7, or 10 from the loop then all the results in the end will be 1
 			// so we can return true
             if(n==1||n==7||n==10)
-                return true;
+            {
+                return true;   
+            }
 				
 			// otherwise, if n is already 1 digit and does not satisfy from previous case then we can return false
             else if(n < 10) 
+            {
                 return false;
+            }
         }
     }
 };
