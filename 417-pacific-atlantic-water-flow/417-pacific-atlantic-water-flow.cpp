@@ -69,12 +69,12 @@ public:
     //main function
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) 
     {
-        int n=heights.size();
+        int n=heights.size();   //row size
         if(n==0)
         {
             return res;
         }
-        int m=heights[0].size();
+        int m=heights[0].size();    //column size
         
       vector<vector<int>> grid(n,vector<int>(m,0));  //storing cell is pacific or atlantic
         
