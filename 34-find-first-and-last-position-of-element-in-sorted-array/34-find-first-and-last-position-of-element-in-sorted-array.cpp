@@ -13,6 +13,7 @@ public:
         return ans;
     }
     
+    //First find the first position of the element
     public:
     int findstartingindex(vector<int>& nums, int target)
     {
@@ -23,6 +24,7 @@ public:
         while(start<=end)
         {
             int mid=start+(end-start)/2;
+            
             if(nums[mid] >= target)
             {
                 end=mid-1;
@@ -38,6 +40,8 @@ public:
         }
         return index;
     }
+    
+    //Find the last position of the element
     public :
     int findendingindex(vector<int>& nums, int target)
     {
@@ -48,6 +52,7 @@ public:
         while(start<=end)
         {
             int mid=start+(end-start)/2;
+            
             if(nums[mid] <= target)
             {
                 start=mid+1;
