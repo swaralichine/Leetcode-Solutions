@@ -16,8 +16,8 @@ public:
             int currminproduct=minproductsofar*nums[i];
             
             maxproductsofar=max(nums[i],max(currmaxproduct,currminproduct));
-            minproductsofar=min(nums[i],min(currmaxproduct,currminproduct));
             
+            minproductsofar=min(nums[i],min(currmaxproduct,currminproduct));
             maxproductsubarray=max(maxproductsubarray,maxproductsofar);
         }
         return maxproductsubarray;
