@@ -1,4 +1,6 @@
 //Two pointers
+//lastNonZeroFoundAt=slow pointer
+//cur=fast pointer
 //Time Complexity=O(n)
 //Space Complexity = O(1)
 class Solution 
