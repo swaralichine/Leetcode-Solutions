@@ -42,13 +42,20 @@ public:
         {
             for(int j=col-1;j>=0;j--)
             {
-                if(i < row-1)
+                if(mat[i][j] == 0)
+                {
+                    dist[i][j]=0;  //no change if the distance is zero
+                }
+                else
+                {
+                 if(i < row-1)
                 {
                     dist[i][j]=min(dist[i][j],dist[i+1][j]+1);
                 }
                 if(j < col-1)
                 {
                     dist[i][j]=min(dist[i][j],dist[i][j+1]+1);
+                }      
                 }
             }
         }
