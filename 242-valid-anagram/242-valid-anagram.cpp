@@ -3,7 +3,7 @@ class Solution
 public:
     bool isAnagram(string s, string t) 
     {
-       map<int,int> count;
+       map <int,int> count;
        if(s.length() != t.length())
        {
            return false;
