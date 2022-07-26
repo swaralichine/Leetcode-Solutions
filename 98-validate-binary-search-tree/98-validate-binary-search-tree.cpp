@@ -14,29 +14,26 @@
 //Space Complexity=O(n)
 class Solution 
 {
-    private:
-       TreeNode* prev=nullptr;
-    
-public:
-    bool isValidBST(TreeNode* root) 
+    bool solve(TreeNode* root,long mini,long maxi)
     {
-        return inorder(root);
-    }
-    bool inorder(TreeNode* root)
-    {
-        if(root==nullptr)
+        if(root==NULL)
         {
             return true;
         }
-        if(!inorder(root->left))
+        if(root->val > mini && root->val < maxi)
         {
-            return false;
+            bool left=solve(root->left,mini,root->val);
+            bool right=solve(root->right,root->val,maxi);
+            return left && right;
         }
-        if(prev!= nullptr && root->val <= prev->val)
-        {
-            return false;
-        }
-        prev=root;
-        return inorder(root->right);
+        return false;
     }
+    public:
+     bool isValidBST(TreeNode* root)
+     {
+         return solve(root,LONG_MIN,LONG_MAX);
+     }
 };
+
+
+
