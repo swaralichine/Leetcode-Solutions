@@ -1,3 +1,6 @@
+//Sorting of two arrays
+//Time Complexity=O(nlogn + mlogm)
+//Space Complexity=O(logn + logm) to O(m+n)
 class Solution
 {
 public:
