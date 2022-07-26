@@ -1,6 +1,6 @@
 //Using Two pointer approach
 //Time Complexity = O(n)
-//Space Complexity = 0(1)
+//Space Complexity = O(1)
 class Solution 
 {
 public:
