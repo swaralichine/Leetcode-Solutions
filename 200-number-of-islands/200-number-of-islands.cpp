@@ -16,7 +16,7 @@ public:
         
     int numIslands(vector<vector<char>>& grid) 
     { 
-      int n=grid.size();
+        int n=grid.size();
         int m=grid[0].size();
         int noofislands=0;
         for(int i=0;i<n;i++)
