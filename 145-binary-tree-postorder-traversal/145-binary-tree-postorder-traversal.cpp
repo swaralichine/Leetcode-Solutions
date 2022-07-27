@@ -12,38 +12,23 @@
 class Solution 
 {
 public:
-    void postorder(vector<int> &ans,TreeNode* root)
+    void solve(TreeNode* root,vector<int>& ans)
     {
-      if(root->left == NULL && root->right == NULL)
-      {
-          ans.push_back(root->val);
-          return;
-      }
-        //go left
-        if(root->left != NULL)
+        if(root == NULL)
         {
-            postorder(ans,root->left);
+            return;
         }
-        //go right
-        if(root->right != NULL)
-        {
-            postorder(ans,root->right);
-        }
-        //take node
+        solve(root->left,ans);
+        solve(root->right,ans);
         ans.push_back(root->val);
     }
     vector<int> postorderTraversal(TreeNode* root) 
     {
         vector<int> ans;
-        if(root == NULL)
-        {
-            return ans;
-        }
-        postorder(ans,root);
+        solve(root,ans);
         return ans;
     }
 };
-
 
 
 
