@@ -9,8 +9,8 @@ case when e.operator = ">" and v1.value > v2.value then "true"
      end
 )as  value
 from Expressions e
-inner join Variables v1 on e.left_operand=v1.name
-inner join Variables v2 on e.right_operand=v2.name;
+join Variables v1 on e.left_operand=v1.name
+join Variables v2 on e.right_operand=v2.name;
 
 
 
