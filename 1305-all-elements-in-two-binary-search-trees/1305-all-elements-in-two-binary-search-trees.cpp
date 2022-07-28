@@ -15,25 +15,24 @@
 class Solution
 {
 public:
-    void inorder(TreeNode* root, vector<int>&v)
+    void preorder(TreeNode* root, vector<int>&v)
     {
         if(root==NULL)
         {
             return;
         }
-        inorder(root->left,v);
         v.push_back(root->val);
-        inorder(root->right,v);
+        preorder(root->left,v);
+        preorder(root->right,v);
     }
     vector<int> getAllElements(TreeNode* root1, TreeNode* root2) 
     {
       //declare vector to store the elements
         vector<int> ans;
-        inorder(root1,ans);
-        inorder(root2,ans);
+        preorder(root1,ans);
+        preorder(root2,ans);
         sort(ans.begin(),ans.end());
         return ans;
     }
 };
-
 
