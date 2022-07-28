@@ -16,20 +16,21 @@ class Solution
 {
 public:
     int sum=0;
-    void postorder(TreeNode* root)
+    void inorder(TreeNode* root)
     {
         if(root == NULL)
         {
             return;
         }
-        postorder(root->right);
+        inorder(root->right);
         sum=sum+root->val;
         root->val=sum;
-        postorder(root->left);
+        inorder(root->left);
+       
     }
     TreeNode* convertBST(TreeNode* root) 
     {
-       postorder(root);
+       inorder(root);
        return root;
     }
 };
