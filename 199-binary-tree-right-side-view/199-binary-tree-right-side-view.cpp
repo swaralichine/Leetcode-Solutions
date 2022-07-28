@@ -9,6 +9,11 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//The traversing order is queue->helper->output
+//the queue will have the root->left->right and their children
+//the helper will have the popped elements from queue
+//the helper will have the rightmost nodes stored at last
+//we store the last element from helper into the output for rightmost view
 class Solution 
 {
 public:
