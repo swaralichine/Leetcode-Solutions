@@ -3,16 +3,18 @@ class Solution
 public:
     bool isPalindrome(int x) 
     {
-        string s=to_string(x);
-        
-        int mid=s.length()/2;
-        
-        for(int i=0,j=s.length()-1;i<mid;i++,j--)
+        long int num=x;
+        long int rem=0;
+        long int rev=0;
+        while(num>0)
         {
-            if(s.at(i) != s.at(j))
-            {
-                return false;
-            }
+            rem=num%10;
+            rev=rev*10+rem;
+            num=num/10;
+        }
+        if(rev!=x)
+        {
+            return false;
         }
         return true;
     }
