@@ -16,42 +16,32 @@
 class Solution 
 {
 public:
+    int height;
     int deepest_leaves_sum=0;
-    //function to find height of the tree
+    //function to find the sum of the deepest leaves
+    void findsum(TreeNode* root,int depth)
+    {
+        if(!root)   return ;
+        depth++;
+        if(root->left==NULL && root->right==NULL && depth==height)
+            deepest_leaves_sum+=root->val;
+        findsum(root->left,depth);
+        findsum(root->right,depth);
+    }
+    //function to find the height of the tree
     int findheight(TreeNode* root)
     {
-        if(root==NULL)
-        {
+        if(!root)
             return 0;
-        }
-        return max(findheight(root->left),findheight(root->right))+1;
-    }
-    //function to find the sum of the deepest leaves
-    void findsum(TreeNode* root,int height)
-    {
-        if(root == NULL)
-        {
-            return;
-        }
-        if(height==1)
-        {
-            deepest_leaves_sum+=root->val;
-        }
-        if(root->left)
-        {
-            findsum(root->left,height-1);
-        }
-        if(root->right)
-        {
-            findsum(root->right,height-1);
-        }
+        int leftheight = findheight(root->left);
+        int rightheight = findheight(root->right);
+        
+        return 1+max(leftheight,rightheight);
     }
     int deepestLeavesSum(TreeNode* root) 
     {
-        int height=findheight(root);
-        findsum(root,height);
+        height=findheight(root);
+        findsum(root,0);
         return deepest_leaves_sum;
     }
 };
-
-    
