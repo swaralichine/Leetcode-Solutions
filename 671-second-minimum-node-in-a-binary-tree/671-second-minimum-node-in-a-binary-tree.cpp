@@ -20,8 +20,8 @@ public:
         {
             return;
         }
-        solve(root->left);
         st.insert(root->val);
+        solve(root->left);
         solve(root->right);
     }
     int findSecondMinimumValue(TreeNode* root) 
