@@ -1,3 +1,5 @@
+//Time Complexity=O(n) (You traverse the array only once)
+//Space Complexity=O(1)
 class Solution 
 {
 public:
