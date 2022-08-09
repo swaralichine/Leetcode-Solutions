@@ -1,28 +1,37 @@
-class Solution {
+class Solution 
+{
 public:
     //comparision function to pass to sort()
-    static bool cmp(pair<char,int>&a, pair<char,int>&b){
+    static bool cmp(pair<char,int>&a, pair<char,int>&b)
+    {
         return a.second > b.second;
     }
     
-    string frequencySort(string s) {
-        string res = "";
+    string frequencySort(string s) 
+    {
+        string ans = "";
         map <char, int> mp;
+        
         for(int i = 0 ; i < s.length(); i++)
             mp[s[i]]++;
-        vector <pair<char, int>> ap;
-        for(auto i : mp)
-            ap.push_back(i);
-        sort(ap.begin(), ap.end(), cmp);
         
-        for(auto i : ap){
-            while(i.second > 0){
-                res += i.first;
+        vector <pair<char, int>> v;
+        
+        for(auto i : mp)
+            v.push_back(i);
+        
+        sort(v.begin(), v.end(), cmp);
+        
+        for(auto i : v)
+        {
+            while(i.second > 0)
+            {
+                ans += i.first;
                 i.second--;
             }
         }
         
-        return res;
+        return ans;
     }
 };
 
