@@ -14,6 +14,7 @@ public:
         
         while(pq.top()!=0)
         {
+            min_time++;
             int x=pq.top();
             pq.pop();
             
@@ -23,7 +24,7 @@ public:
                pq.push(x-1);
                pq.push(y-1);
             
-            min_time++;
+            
         }
         return min_time;
     }
