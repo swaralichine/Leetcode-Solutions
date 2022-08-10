@@ -16,13 +16,13 @@ class Solution
 public:
     void dfsleft(TreeNode* node,vector<int>&ans)
     {
-        if(node==NULL || (node->left ==NULL && node->right ==NULL))
+        if(node==nullptr || (node->left ==nullptr && node->right ==nullptr))
         {
             return;
         }
         ans.push_back(node->val);
         //we are traversing all the nodes of the left subtree that are not leaves
-        if(node->left!=NULL)
+        if(node->left!=nullptr)
         {
             dfsleft(node->left,ans);
         }
@@ -33,12 +33,12 @@ public:
     }
     void dfsright(TreeNode* node,vector<int>&ans)
     {
-        if(node==NULL || (node->left == NULL && node->right ==NULL))
+        if(node==nullptr || (node->left == nullptr && node->right ==nullptr))
         {
             return;
         }
         //we are traversing all the nodes of the right subtree that are not leaves
-        if(node->right!=NULL)
+        if(node->right!=nullptr)
         {
             dfsright(node->right,ans);
         }
@@ -50,11 +50,11 @@ public:
     }
     void dfsleaves(TreeNode* node,vector<int>&ans)
     {
-        if(node==NULL)
+        if(node==nullptr)
         {
             return;
         }
-        if(node->left==NULL && node->right==NULL)
+        if(node->left==nullptr && node->right==nullptr)
         {
             ans.push_back(node->val);
             return;
