@@ -1,30 +1,27 @@
-//Using DP
-class Solution 
-{
+//time complexity=O(n^2)
+//space complexity=O(1)
+class Solution {
 public:
-    int triangularSum(vector<int>& nums) 
+    int findsum(vector<int> &nums)
     {
-        int n=nums.size();
-        vector<vector<int>> ans(n,vector<int>(n,0));
-        
-        //fill the first row as it is
-        for(int i=0;i<n;i++)
+        for(int i=0;i<nums.size()-1;i++)
         {
-            ans[0][i]=nums[i];
-        }
-        
-        //start from the second row
-        for(int i=1;i<n;i++)
-        {
-            for(int j=0;j<n;j++)
+            int k = 0;
+            for(int j=0;j<nums.size()-i-1;j++)
             {
-                if(j>0)
-                {
-                    ans[i][j]=(ans[i-1][j-1]+ans[i-1][j])%10;
-                }
+                nums[k++] = (nums[j]+nums[j+1])%10;
             }
         }
-        return ans[n-1][n-1];
+        return nums[0];
+    }
+    
+    int triangularSum(vector<int>& nums) {
+        if(nums.size()==1)
+        {
+            return nums[0];
+        }
+        int n = findsum(nums);
+        return n;
     }
 };
 
