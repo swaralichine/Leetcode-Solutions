@@ -14,12 +14,13 @@ public:
     sort(boxTypes.begin(),boxTypes.end(),comparebox);
 	
     int ans=0;
-    for(auto box : boxTypes){
+    for(auto box : boxTypes)
+    {
         int x = min(box[0],truckSize); 
         ans+=(x*box[1]); 
         truckSize-=x;  
         
-        if(!truckSize) break;  
+        if(truckSize==0) break;  
     }
     return ans;
 }
