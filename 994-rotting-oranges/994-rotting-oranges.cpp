@@ -1,4 +1,4 @@
-//Time complexity=O(rc)
+//Time complexity=O(rc)  (O(n) where n is the number of oranges)
 //Space Complexity=O(rc)
 class Solution 
 {
