@@ -1,9 +1,14 @@
 //time complexity=O(n^2)
 //space complexity=O(1)
-class Solution {
+class Solution 
+{
 public:
-    int findsum(vector<int> &nums)
+    int triangularSum(vector<int>& nums) 
     {
+        if(nums.size()==1)
+        {
+            return nums[0];
+        }
         for(int i=0;i<nums.size()-1;i++)
         {
             int k = 0;
@@ -13,15 +18,6 @@ public:
             }
         }
         return nums[0];
-    }
-    
-    int triangularSum(vector<int>& nums) {
-        if(nums.size()==1)
-        {
-            return nums[0];
-        }
-        int n = findsum(nums);
-        return n;
     }
 };
 
