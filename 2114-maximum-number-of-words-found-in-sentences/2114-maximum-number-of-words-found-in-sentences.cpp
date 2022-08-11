@@ -12,7 +12,9 @@ public:
             while(j < s[i].length())
             {
                 if(s[i][j++] == ' ')
-                    count++;
+                {
+                   count++;   
+                }
             }
             i++;
             max_words = max(count, max_words);
