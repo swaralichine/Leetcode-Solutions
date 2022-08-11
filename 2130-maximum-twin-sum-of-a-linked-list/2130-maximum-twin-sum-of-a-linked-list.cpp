@@ -10,29 +10,24 @@
  */
 //Time Complexity=O(n)
 //simply put all the elements in an array and then find the max twin sum
-class Solution 
-{
+
+
+class Solution {
 public:
-    int pairSum(ListNode* head) 
-    {
-        ListNode* temp=head;
-        vector<int> ans;    //to store the LL elements
-        while(temp)
-        {
-            ans.push_back(temp->val);
-            temp=temp->next;
-        }
-        int max_sum=-1;
-        int sum=0;
-        int n=ans.size();
-        for(int i=0;i<=(n/2)-1;i++)
-        {
-            sum=ans[i]+ans[n-i-1];
-            if(sum>=max_sum)
-            {
-                max_sum=sum;
-            }
-        }
-        return max_sum;
+int pairSum(ListNode* head) {
+    vector<int> arr;
+    while(head){
+        arr.push_back(head->val);
+        head=head->next;
     }
+    int n=arr.size()-1;
+    int maxSum=0,sum;
+    for(int i=0;i<=n;i++) {
+        sum = (arr[i]+arr[n-i]);
+        if(sum>maxSum){
+            maxSum = sum;
+        }
+    }
+    return maxSum;
+}
 };
