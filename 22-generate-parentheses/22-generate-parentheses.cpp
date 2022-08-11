@@ -1,3 +1,4 @@
+//we are using two pointers here:left and right
 class Solution 
 {
 public:
