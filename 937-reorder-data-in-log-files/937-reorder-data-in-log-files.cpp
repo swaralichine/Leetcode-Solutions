@@ -5,43 +5,46 @@
 //5. Now sort the letters array.
 //6. And push the final answer into final vector.
 
-class Solution
+class Solution 
 {
+private:
+    vector<string>ans;
+    
+    vector<pair<string,string>>letters;
+    vector<pair<string,string>>digits;
+    
+    bool f;
 public:
-    vector<string> reorderLogFiles(vector<string>& logs) 
+    vector<string> reorderLogFiles(vector<string>& logs)
     {
-        vector<pair<string, string>> dig;
-        vector<pair<string, string>> let;
-        
-        for(auto i : logs)
+        for(auto it : logs)
         {
-            bool flag = false;
-            string s = "";
-            string t = "";
-            for(int j = 0; j < i.size(); j++)
+            string s="", t="";
+            f = false;//1st space encountered or not
+            for(int j=0; j<(int)it.size(); ++j)
             {
-                if(i[j] == ' ' && flag == false) //first blank space
+                if(it[j]==' ' and !f)
                 {
-                    flag = true;
-                    continue;
+                    f=true;
+                    continue;//1st space encountered(first = identifier)
                 }
-                if(flag == false) 
-                    s += i[j];
-                else
-                    t += i[j];
-             }
-                if(t[0] >= 'a' && t[0] <= 'z')  //check for letters
-                    let.push_back({t, s});
-                else
-                    dig.push_back({t, s});  //check for digits
+                if(!f)
+                    s+=(char)it[j];//first part eg  dig1 (storing identifier in s)
+                else  
+                    t+=(char)it[j];//2nd part eg 8 1 5 1
+            }
+            if(t[0]>='a' and t[0]<='z')
+                letters.push_back({t,s});
+            else 
+                digits.push_back({t,s});
         }
-        sort(let.begin(), let.end());
+        sort(letters.begin(),letters.end());
         
-            vector<string> ans;
-            for(auto i : let)
-                ans.push_back(i.second + " " + i.first);
-            for(auto i : dig)
-                ans.push_back(i.second + " " + i.first);
+        for(auto it : letters)
+            ans.push_back((string)it.second+" "+it.first);  //second part is the identifier
+        for(auto it : digits)
+            ans.push_back((string)it.second+" "+it.first);
+        
         return ans;
-        }
+    }
 };
