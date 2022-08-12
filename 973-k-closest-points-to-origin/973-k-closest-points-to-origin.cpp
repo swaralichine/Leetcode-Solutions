@@ -1,10 +1,12 @@
+//time complexity=O(klogn)
+//space complexity=O(n)
 class Solution 
 {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k)
     {
         //using priority queue to store the smallest elements first
-        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>data;
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>>             data;
         
         for(int i=0;i<points.size();i++)
         {
@@ -23,7 +25,7 @@ public:
         
         while(k)
         {
-            //the second element so to say is the coordinate(first is the distance which is the key)
+            //the second element so to say is the coordinate(first is the distance which            is the key)
             int x=data.top().second;
             data.pop();
             ans.push_back(points[x]);
