@@ -19,7 +19,7 @@ class Solution
                     int val = 0;
                     while (i < n && isdigit(s[i]))
                     {
-                        val = 10 *val + (s[i] - '0');
+                        val = 10*val + (s[i] - '0');
                         i++;
                     }
                     i--;	// moves one pointer extra so decreament
