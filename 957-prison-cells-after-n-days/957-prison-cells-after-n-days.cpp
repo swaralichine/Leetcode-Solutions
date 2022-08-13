@@ -27,7 +27,7 @@ public:
                 if(cells[i - 1] == cells[i + 1])
                     v[i] = 1;
                 else v[i] = 0;
-            cells = v;
+            cells = v;   //updating cells=v
         }
     }
 };
