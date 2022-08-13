@@ -4,7 +4,9 @@
 //4. Same goes with digit array.
 //5. Now sort the letters array.
 //6. And push the final answer into final vector.
-
+//Let NN be the number of logs in the list and MM be the maximum length of a single log.
+//Time Complexity:O(M⋅N⋅logN)
+//space complexity:O(mn)
 class Solution 
 {
 private:
@@ -13,14 +15,16 @@ private:
     vector<pair<string,string>>letters;
     vector<pair<string,string>>digits;
     
-    bool f;
+    bool f;  //for identifier
 public:
     vector<string> reorderLogFiles(vector<string>& logs)
     {
         for(auto it : logs)
         {
             string s="", t="";
+            
             f = false;//1st space encountered or not
+            
             for(int j=0; j<(int)it.size(); ++j)
             {
                 if(it[j]==' ' and !f)
@@ -28,7 +32,7 @@ public:
                     f=true;
                     continue;//1st space encountered(first = identifier)
                 }
-                if(!f)
+                if(!f)   //identifier is identified
                     s+=(char)it[j];//first part eg  dig1 (storing identifier in s)
                 else  
                     t+=(char)it[j];//2nd part eg 8 1 5 1
@@ -38,6 +42,7 @@ public:
             else 
                 digits.push_back({t,s});
         }
+        
         sort(letters.begin(),letters.end());
         
         for(auto it : letters)
