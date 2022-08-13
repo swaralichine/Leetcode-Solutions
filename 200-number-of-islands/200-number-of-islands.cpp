@@ -4,10 +4,12 @@ class Solution {
 public:
     void dfs(vector<vector<char>>& grid,int x,int y)
     {
+        //checking the constraints and if the cell is not one
         if(x < 0 || y < 0 || x >= grid.size() || y >=grid[0].size() || grid[x][y]!='1')
         {
             return;
         }
+        //make the current cell zero to mark it visited 
         grid[x][y]=0;
         
         dfs(grid,x-1,y);
