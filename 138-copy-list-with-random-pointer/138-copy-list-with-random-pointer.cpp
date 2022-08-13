@@ -1,27 +1,34 @@
 
 //time complexity=O(n)
 //space complexity=O(1)
-class Solution {
+class Solution 
+{
 public:
-    Node* copyRandomList(Node* head) {
+    Node* copyRandomList(Node* head) 
+    {
         
-        if(head==NULL){
+        if(head==NULL)
+        {
             return NULL;
         }
         
         Node* temp= head;
-        while(temp!=NULL){
+        while(temp!=NULL)
+        {
             Node* m= new Node(temp->val);
             m->next= temp->next;
             temp->next= m;
             temp = temp->next->next;
         }
         temp= head;
-        while(temp!=NULL){
-            if(temp->random==NULL){
+        while(temp!=NULL)
+        {
+            if(temp->random==NULL)
+            {
                 temp->next->random=NULL;
             }
-            else{
+            else
+            {
                 temp->next->random= temp->random->next;
             }
             
@@ -31,7 +38,8 @@ public:
         Node* p= new Node(-1);
         Node* r= p;
         Node* q= head;
-        while(q!=NULL){
+        while(q!=NULL)
+        {
             q= q->next->next;
             p->next=temp->next;
             p=p->next;
