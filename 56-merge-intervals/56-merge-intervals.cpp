@@ -1,4 +1,5 @@
-//Time Complexity = O(n)
+//Time Complexity = O(nlogn)
+//space complexity=O(logn)
 class Solution 
 {
 public:
