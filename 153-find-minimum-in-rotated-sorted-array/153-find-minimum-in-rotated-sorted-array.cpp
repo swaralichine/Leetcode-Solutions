@@ -12,7 +12,8 @@ public:
         }
         int left=0;
         int right=nums.size()-1;
-        
+        //checking the condition for array not rotated
+        //if the array is not rotated nums[end]>nums[start]
         if(nums[right]>nums[left])
         {
             return nums[0];
