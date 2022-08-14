@@ -25,7 +25,7 @@ public:
             
             f = false;//1st space encountered or not
             
-            for(int j=0; j<(int)it.size(); ++j)
+            for(int j=0; j<(int)it.size();j++)
             {
                 if(it[j]==' ' and !f)
                 {
@@ -33,7 +33,7 @@ public:
                     continue;//1st space encountered(first = identifier)
                 }
                 if(!f)   //identifier is identified
-                    s+=(char)it[j];//first part eg  dig1 (storing identifier in s)
+                    s+=(char)it[j];//first part eg  dig1 (storing identifier in                                         s)
                 else  
                     t+=(char)it[j];//2nd part eg 8 1 5 1
             }
