@@ -9,32 +9,45 @@ public:
         int n=nums.size();
         if(n<3)
         {
-            return{};
+            return {};
         }
-        vector<vector<int>> ans;
+        vector<vector<int>> result;
         sort(nums.begin(),nums.end());
         for(int i=0;i<n-2;i++)
         {
-            if(i == 0 || nums[i] != nums[i-1])
+            if(i==0 || nums[i]!=nums[i-1])
             {
+                //using two sum approach
                 int j=i+1;
                 int k=n-1;
                 while(j<k)
                 {
-                    int sum=nums[i]+nums[j]+nums[k];
-                    if(sum==0)
+                   int sum=nums[i]+nums[j]+nums[k];
+                   if(sum==0)
+                   {
+                       result.push_back({nums[i], nums[j], nums[k]});
+                       while(j<k && nums[j]==nums[j+1])
+                       {
+                           j++;
+                       }
+                       while(j<k && nums[k]==nums[k-1])
+                       {
+                           k--;
+                       }
+                       j++;
+                       k--; 
+                   }
+                   else if(sum>0)
+                   {
+                       k--;
+                   }
+                   else
                     {
-                        ans.push_back({nums[i],nums[j],nums[k]});
-                        while(j<k && nums[j] == nums[j+1]) j++;
-                        while(j<k && nums[k] == nums[k-1]) k--;
                         j++;
-                        k--;
                     }
-                    else if(sum<0) j++;
-                    else k--;
-                }
-            }
-        }
-        return ans;
+                  }
+               }
+           }
+        return result;
     }
 };
