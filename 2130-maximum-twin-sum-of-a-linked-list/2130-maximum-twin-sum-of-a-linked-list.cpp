@@ -24,6 +24,7 @@ public:
         int max_sum=INT_MIN;
         int sum=0;
         int n=ans.size();
+        
         for(int i=0;i<=(n/2)-1;i++)
         {
             sum=ans[i]+ans[n-i-1];
