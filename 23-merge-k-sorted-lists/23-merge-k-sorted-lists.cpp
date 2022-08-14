@@ -26,7 +26,7 @@ public:
         {
             return a->val > b->val;
         };
-        std::priority_queue<ListNode*,std::vector<ListNode*>, decltype(cmp) > pq(cmp);
+        priority_queue<ListNode*,vector<ListNode*>, decltype(cmp) > pq(cmp);
         
         //insert all lists pointers 
         for(auto l:lists)
