@@ -25,7 +25,7 @@ public:
         
         while(k)
         {
-            //the second element so to say is the coordinate(first is the distance which            is the key)
+            //the second element so to say is the coordinate(first is the distance                  which is the key)
             int x=data.top().second;
             data.pop();
             ans.push_back(points[x]);
