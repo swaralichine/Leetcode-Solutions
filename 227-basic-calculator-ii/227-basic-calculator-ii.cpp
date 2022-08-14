@@ -9,6 +9,7 @@ class Solution
             int n = s.length();
             stack<int> st;
             char sign = '+';
+            
             for (int i = 0; i < n; ++i)
             {
                 if (s[i] == ' ') 
