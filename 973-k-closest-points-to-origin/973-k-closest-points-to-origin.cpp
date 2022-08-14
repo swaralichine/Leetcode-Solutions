@@ -1,4 +1,4 @@
-//time complexity=O(klogn)
+//time complexity=O(nlogn)
 //space complexity=O(n)
 class Solution 
 {
