@@ -25,6 +25,7 @@ public:
                 word.push_back(paragraph[i]);
                 i++;    
             }
+            //if word is not there in banned list then only increase its frequency
             if(ban.find(word)==ban.end() && word!="")
             {
                 mp[word]++;
