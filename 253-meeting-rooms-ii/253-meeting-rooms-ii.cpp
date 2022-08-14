@@ -7,7 +7,7 @@ public:
     {
         //sort by starting time intervals
         sort(intervals.begin(),intervals.end());
-        //declaring a priority queue for storing the minimum rooms               required
+        //declaring a priority queue(min heap) for storing the minimum rooms required
         priority_queue<int, vector<int>, greater<int>> pq;
         //storing the first interval in the priority queue
         pq.push(intervals[0][1]);
@@ -15,7 +15,7 @@ public:
         for(int i=1;i<intervals.size();i++)
         {
             vector<int>& v=intervals[i];
-            //comparing the top-most element on priority queue with the               intervals start time
+            //comparing the top-most element on priority queue with the                       intervals start time
              if(v[0] >= pq.top())
              {
                  pq.pop();
