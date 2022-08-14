@@ -3,7 +3,7 @@
 
 class MinStack 
 {
-vector<pair<int,int>> v; //to store the element and the minimum element
+   vector<pair<int,int>> v; //to store the element and the minimum element
 public:
     MinStack() 
     {
@@ -18,7 +18,7 @@ public:
         }
         else
         {
-            v.push_back({val,min(val,v[v.size()-1].second)});  //second element is the minimum
+            v.push_back({val,min(val,v[v.size()-1].second)});  //second                                                     element is the minimum
         }
     }
     
