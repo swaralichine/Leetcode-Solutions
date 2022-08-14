@@ -34,13 +34,15 @@ Eg:
 class KthLargest 
 {
 public:
+    
     int k;
+    //maintaining a min-heap
     priority_queue<int,vector<int>,greater<int> > pq;
         
     KthLargest(int k, vector<int>& nums) 
     {
         
-       this -> k = k;
+       this->k = k;
         
         if(nums.size() == 0)   
             return;
@@ -62,6 +64,5 @@ public:
             pq.pop();
         
         return pq.top();
-        
     }
 };
