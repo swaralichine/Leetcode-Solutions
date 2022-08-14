@@ -13,7 +13,7 @@
 class Solution 
 {
 private:
-int height(TreeNode* root, int&diamter)
+int height(TreeNode* root, int&diamter)  //pass value by reference
 {
      if(root == NULL) 
           return 0;
