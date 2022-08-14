@@ -2,6 +2,8 @@
 //DFS Recursive approach
 //Pacific Ocean - Up and Left
 //Atlantic Ocean - Down and Right
+//time complexity=O(rc)
+//space complexity=O(rc)
 class Solution
 {
 public:
@@ -27,7 +29,7 @@ public:
             int rr=r+dr[i];
             int cc=c+dc[i];
             
-            if(rr>=0 && rr<n && cc>=0 && cc<m && matrix[rr][cc] >= matrix[r][c])
+            if(rr>=0 && rr<n && cc>=0 && cc<m && matrix[rr][cc] >= matrix[r]              [c])
             {
                 pacificocean(matrix,rr,cc,grid);
             }
