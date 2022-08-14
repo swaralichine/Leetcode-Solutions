@@ -19,8 +19,9 @@ public:
         {
             return;
         }
-        grid[r][c]=1;
+        grid[r][c]=1;  //visited
         
+        //storing the directions
         int dr[4]={-1,1,0,0};
         int dc[4]={0,0,-1,1};
         
@@ -29,7 +30,7 @@ public:
             int rr=r+dr[i];
             int cc=c+dc[i];
             
-            if(rr>=0 && rr<n && cc>=0 && cc<m && matrix[rr][cc] >= matrix[r]              [c])
+            if(rr>=0 && rr<n && cc>=0 && cc<m && matrix[rr][cc] >= matrix[r][c])
             {
                 pacificocean(matrix,rr,cc,grid);
             }
@@ -42,7 +43,8 @@ public:
     {
         int n=matrix.size();
         int m=matrix[0].size();
-        if(grid[r][c]==1)
+        
+        if(grid[r][c]==1)    //visited pacific
         {
             res.push_back({r,c});
         }
