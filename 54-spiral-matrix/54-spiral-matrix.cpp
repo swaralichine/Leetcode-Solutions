@@ -6,6 +6,7 @@ public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) 
     {
         vector<int> ans;
+        
         int rows=matrix.size();
         int col=matrix[0].size();
         
@@ -28,14 +29,16 @@ public:
                 ans.push_back(matrix[row][right]);
             }
             //make sure we are on different row
+            //traverse from right to left
             if(up!=down)
             {
-                //traverse from right to left
                 for(int col=right-1;col>=left;col--)
                 {
                     ans.push_back(matrix[down][col]);
                 }
             }
+             //make sure we are on different column
+              //traverse from down to up
             if(left!=right)
             {
                 //traverse upwards
