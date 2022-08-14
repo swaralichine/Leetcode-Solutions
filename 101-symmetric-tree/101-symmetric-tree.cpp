@@ -16,11 +16,13 @@ class Solution
 public:
     bool checksymmetric(TreeNode* left,TreeNode* right)
     {
-        if(left==NULL || right == NULL){
+        if(left==NULL || right == NULL)
+        {
             return left == right; // it must be equal to be symmetric
         }
         
-        if(left->val != right->val) return false;
+        if(left->val != right->val) 
+            return false;
         
         // as mirrors left is right for the other guy
         //We return true if both the subtrees are same
@@ -30,7 +32,8 @@ public:
     }
     bool isSymmetric(TreeNode* root)
     {
-        if(root == NULL) return true;
+        if(root == NULL) 
+            return true;
         return checksymmetric(root->left,root->right);
     }
 };
