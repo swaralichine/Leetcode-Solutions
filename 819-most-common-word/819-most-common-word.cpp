@@ -10,12 +10,15 @@ public:
         {
             ban[banned[i]]++;
         }
+        
         int max_freq=0;
         string ans="";
-         unordered_map<string,int> mp;
+        unordered_map<string,int> mp;
+        
         for(int i=0;i<paragraph.length();i++)
         {
             string word="";
+            
             while(i<paragraph.length() && isalpha(paragraph[i]))
             {
                 paragraph[i]=tolower(paragraph[i]);
