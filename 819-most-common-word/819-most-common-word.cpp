@@ -1,3 +1,5 @@
+//time complexity=O(n+m) n:no of characters in input string, m: no of characters in banned list
+//space complexity=O(n+m)
 class Solution
 {
 public:
