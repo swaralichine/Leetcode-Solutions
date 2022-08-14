@@ -21,15 +21,15 @@ int height(TreeNode* root, int&diamter)
     int lh = height(root -> left, diamter);
     int rh = height(root -> right, diamter);
     
-    diamter = max(diamter, (lh+ rh));
+    diamter = max(diamter, (lh + rh));   //distance between two leaves
     
     return max(lh , rh) +1;
 }
 public:
 int diameterOfBinaryTree(TreeNode* root) 
-{
- int diamter =0;
- height(root,diamter);
- return diamter;
-}
+    {
+     int diamter =0;
+     height(root,diamter);
+     return diamter;
+ }
 };
