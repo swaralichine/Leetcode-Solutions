@@ -16,7 +16,7 @@ class Solution
 public:
     void dfsleft(TreeNode* node,vector<int>&ans)
     {
-        if(node==nullptr || (node->left ==nullptr && node->right ==nullptr))
+        if(node==nullptr || (node->left ==nullptr && node->right ==nullptr)) //nothing is there
         {
             return;
         }
@@ -37,6 +37,7 @@ public:
         {
             return;
         }
+       
         //we are traversing all the nodes of the right subtree that are not leaves
         if(node->right!=nullptr)
         {
@@ -46,7 +47,7 @@ public:
         {
             dfsright(node->left,ans);
         }
-        ans.push_back(node->val);
+         ans.push_back(node->val);
     }
     void dfsleaves(TreeNode* node,vector<int>&ans)
     {
@@ -65,7 +66,9 @@ public:
     vector<int> boundaryOfBinaryTree(TreeNode* root) 
     {
        vector<int> ans;
+        
        ans.push_back(root->val);
+        
        dfsleft(root->left,ans);
        dfsleaves(root->left,ans);
        dfsleaves(root->right,ans);
