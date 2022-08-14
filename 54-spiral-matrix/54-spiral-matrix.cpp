@@ -5,6 +5,7 @@ class Solution
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) 
     {
+        //vector to store the answer
         vector<int> ans;
         
         int rows=matrix.size();
