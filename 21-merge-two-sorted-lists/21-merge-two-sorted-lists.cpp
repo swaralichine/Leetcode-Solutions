@@ -8,6 +8,8 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//time complexity=O(m+n)
+//space complexity=O(1)
 class Solution 
 {
 public:
