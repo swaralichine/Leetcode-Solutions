@@ -1,5 +1,5 @@
 //Time Complexity = O(nlogn)
-//space complexity=O(logn)
+//space complexity=O(logn) (sorting takes this space)
 class Solution 
 {
 public:
@@ -10,7 +10,9 @@ public:
            return intervals;
        }
        sort(intervals.begin(),intervals.end());
+        
        vector<vector<int>> ans;
+        
        ans.push_back(intervals[0]);
        for(int i=1;i<intervals.size();i++)
        {
