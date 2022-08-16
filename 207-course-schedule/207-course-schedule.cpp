@@ -22,10 +22,12 @@ public:
                 }
             }
         }
-        //after processing all the adjacent nodes make the node=1(i.e       processed)
+        //after processing all the adjacent nodes make the node=1(i.e processed)
         visited[curr]=1;
+        
         return false;
     }
+    
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) 
     {
         //make a directed graph
