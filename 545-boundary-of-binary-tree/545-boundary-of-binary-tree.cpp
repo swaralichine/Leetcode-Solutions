@@ -9,8 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-//Time complexity=O(n)
-//Space Compexity=O(n)
+//Time complexity=O(n) (one complete traversal of the tree is done)
+//Space Compexity=O(n) (the recursive stack can grow upto a depth of n)
 class Solution 
 {
 public:
@@ -65,14 +65,14 @@ public:
     }
     vector<int> boundaryOfBinaryTree(TreeNode* root) 
     {
-       vector<int> ans;
+       vector<int> ans;   //storing output
         
        ans.push_back(root->val);
         
-       dfsleft(root->left,ans);
-       dfsleaves(root->left,ans);
-       dfsleaves(root->right,ans);
-       dfsright(root->right,ans);
+       dfsleft(root->left,ans);   //left
+       dfsleaves(root->left,ans);   //left->leaves
+       dfsleaves(root->right,ans);   //right->leaves
+       dfsright(root->right,ans);   //right
         
        return ans; 
     }
