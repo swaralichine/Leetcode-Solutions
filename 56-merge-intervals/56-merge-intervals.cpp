@@ -1,4 +1,4 @@
-//Time Complexity = O(nlogn)
+//Time Complexity = O(nlogn) (sorting logn and n rooms)
 //space complexity=O(logn) (sorting takes this space)
 class Solution 
 {
