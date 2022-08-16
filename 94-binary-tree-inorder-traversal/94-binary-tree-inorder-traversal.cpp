@@ -9,6 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//time complexity=O(n) (recursive function is: T(n)=2.(T/2)+1)
+//space complexity=O(n)
 class Solution 
 {
 public:
