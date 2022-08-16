@@ -1,4 +1,4 @@
-//time complexity=O(nlogn)
+//time complexity=O(nlogn) n=length of points
 //space complexity=O(n)
 class Solution 
 {
