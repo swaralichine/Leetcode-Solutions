@@ -9,6 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//root->left->right
 class Solution 
 {
 public:
