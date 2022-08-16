@@ -57,7 +57,6 @@ public:
     
     int add(int val) 
     {
-        
         pq.push(val);
         
         while(pq.size()!=k)
