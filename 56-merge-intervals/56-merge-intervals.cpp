@@ -9,7 +9,7 @@ public:
        {
            return intervals;
        }
-       sort(intervals.begin(),intervals.end());
+       sort(intervals.begin(),intervals.end());  //sorting with start value
         
        vector<vector<int>> ans;
         
