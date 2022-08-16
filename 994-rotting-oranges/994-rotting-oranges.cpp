@@ -1,5 +1,6 @@
 //Time complexity=O(rc)  (O(n) where n is the number of oranges)
 //Space Complexity=O(rc)
+//using bfs
 class Solution 
 {
 public:
@@ -10,6 +11,7 @@ public:
         
         int r=grid.size();
         int c=grid[0].size();
+        
         int fresh=0;
         int time=0;
         
@@ -30,12 +32,14 @@ public:
         while(!rotten.empty())
         {
             int num=rotten.size();
+            
             for(int i=0;i<num;i++)
             {
                 int x=rotten.front().first;
                 int y=rotten.front().second;
                 
                 rotten.pop();
+                
                 if(x>0 && grid[x-1][y]==1)
                 {
                     grid[x-1][y]=2;
