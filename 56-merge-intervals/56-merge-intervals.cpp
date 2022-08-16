@@ -14,6 +14,7 @@ public:
        vector<vector<int>> ans;
         
        ans.push_back(intervals[0]);
+        
        for(int i=1;i<intervals.size();i++)
        {
            if(ans.back()[1] >= intervals[i][0])
