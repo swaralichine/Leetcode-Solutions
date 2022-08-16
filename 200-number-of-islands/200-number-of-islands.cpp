@@ -9,7 +9,7 @@ public:
         {
             return;
         }
-        //make the current cell zero to mark it visited 
+        //make the current cell zero to mark it visited (in order to not visit it again)
         grid[x][y]=0;
         
         dfs(grid,x-1,y);
