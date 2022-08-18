@@ -6,7 +6,8 @@ public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k)
     {
         //using priority queue to store the smallest elements first
-        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>>             data;
+        priority_queue<pair<int,int>, vector<pair<int,int>> , greater<pair<int,int>>> pq;
+        //priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> data;
         
         for(int i=0;i<points.size();i++)
         {
@@ -18,7 +19,7 @@ public:
             int distance=pow(x,2)+pow(y,2);
             
             //saving the distance and the coordinates in the priority queue
-            data.push({distance,i}); 
+            pq.push({distance,i}); 
         }
         //declaring a vector to display the result
         vector<vector<int>> ans;
@@ -26,8 +27,8 @@ public:
         while(k)
         {
             //the second element so to say is the coordinate(first is the distance                  which is the key)
-            int x=data.top().second;
-            data.pop();
+            int x=pq.top().second;
+            pq.pop();
             ans.push_back(points[x]);
             k--;
         }
