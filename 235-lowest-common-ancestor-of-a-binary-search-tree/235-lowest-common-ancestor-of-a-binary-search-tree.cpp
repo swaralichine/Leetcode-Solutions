@@ -23,11 +23,15 @@ public:
             //both nodes are in the left subtree
             return lowestCommonAncestor(root->left,p,q);
         }
-        if(p->val > root->val && q->val > root->val)
+        else if(p->val > root->val && q->val > root->val)
         {
             //both nodes are in the right subtree
             return lowestCommonAncestor(root->right,p,q);
         }
-        return root;
+        else
+        {
+            // We have found the split point, i.e. the LCA node.
+            return root;
+        }
     }
 };
