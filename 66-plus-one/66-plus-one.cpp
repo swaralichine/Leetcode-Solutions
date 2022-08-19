@@ -34,24 +34,23 @@ public:
         
         //till all elements are checked
         //if all 9's are there in number, loop will run till all elements get its proper value
-        while(index >= 0)
+        for(int i=index;i>=0;i--)
         {
             //last digit strictly 9
-            if(digits[index] == 9)
+            if(digits[i] == 9)
             {
                 //replace it with 0
-                digits[index] = 0;
+                digits[i] = 0;
             }
             else
             {
                 //last digit less than 9 (not equals to 9)
                 //increment last digit with 1 and return last digit
-                digits[index] = digits[index] + 1;
+                digits[i] = digits[i] + 1;
                 return digits;
             }
             //this part will be into use when last digit is 9
             //else if less than 9, ans will be returned
-            index--;
         }
         //if above loop is executed fully, and no value is thrown , means all digits where 9
         //so all 9's have its updated value after execution of this loop
