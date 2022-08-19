@@ -6,6 +6,9 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+//time complexity=O(max(M,N))
+//space complexity=O(1)
+//using two pointer approach
 class Solution
 {
 public:
