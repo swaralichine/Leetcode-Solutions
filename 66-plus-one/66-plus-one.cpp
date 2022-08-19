@@ -25,8 +25,7 @@ public:
             }
         }
         // we're here because all the digits are nines(corner case)
-        vector<int> ans(n+1,0);
-        ans[0]=1;
-        return ans;
+        digits.insert(digits.begin(),1);
+        return digits;
     }
 };
