@@ -2,6 +2,13 @@
 //space complexity=O(1)
 //The keyboard only has unique lowercase English letters, so we can map it to an array of size 26. Therefore, we'll create an array of size 26, let's call it keyIndices.
 //Store the index of each letter in this array by traversing keyboard.
+//Initialize the result variable to 0 which would store the summation of all the distances.
+//Declare a variable prev which would store the index of the previous key. Since the starting position is 0, initialize it to 0.
+//Traverse word letter-by-letter.
+//For each letter c add |prev-indexof(c)∣ to result.
+//Update prev to index of c.
+//repeat the steps for all letters
+//At the end of the traversal, result will be the final time required to type the word.
 class Solution 
 {
 public:
