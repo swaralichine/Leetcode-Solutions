@@ -19,7 +19,7 @@ public:
             ans.push(val);
             sum+=val;
         }
-        else
+        else    //if the size of queue is exceeding we remove the front element since queue works on FIFO
         {
             int lastelement=ans.front();
             ans.pop();
