@@ -19,7 +19,7 @@ public:
            end=max(end,lastindex[s[i]-'a']);
            if(i == end)
            {
-               ans.push_back(i-start+1);
+               ans.emplace_back(i-start+1);
                start=i+1;
            }
         }
