@@ -18,7 +18,7 @@ public:
             }
             else if(nums[mid]>=nums[left])
             {
-                if(target>=nums[left] && target<nums[mid])
+                if(nums[left]<=target && target<nums[mid])
                 {
                     right=mid-1;
                 }
@@ -29,7 +29,7 @@ public:
             }
             else
             {
-                if(target<=nums[right] && target>nums[mid])
+                if(nums[mid]<target && target<=nums[right])
                 {
                     left=mid+1;
                 }
