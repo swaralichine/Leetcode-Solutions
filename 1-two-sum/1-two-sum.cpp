@@ -1,3 +1,5 @@
+//time complexity=O(n) we traverse the list containing n elements once
+//space complexity=O(n) depends on the number of elements stored in the hashtable
 class Solution
 {
 public:
@@ -8,14 +10,14 @@ public:
         
         for(int i=0;i<nums.size();i++)
         {
-            if(mp.find(target-nums[i]) != mp.end())
-               {
-                   ans.push_back(mp[target-nums[i]]);
-                   ans.push_back(i);
-               }
-               mp[nums[i]]=i;
+            if(mp.find(target-nums[i])!=mp.end())
+            {
+               ans.push_back(mp[target-nums[i]]);
+               ans.push_back(i);
+            }
+            mp[nums[i]]=i;
         }
-               return ans;
+        return ans;
     }
 };
 
