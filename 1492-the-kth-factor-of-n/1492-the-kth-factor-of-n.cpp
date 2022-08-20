@@ -1,24 +1,22 @@
+//time complexity=O(n)
+//space complexity=O(1)
 class Solution 
 {
 public:
     int kthFactor(int n, int k)
     {
-        //vector to store the ans
-        vector<int> ans;
-        ans.push_back(1);
-        
-        for(int i=2;i<=n;i++)
-        {
-            if(n%i==0)
-            {
-                ans.push_back(i);
-            }
+       for(int x=1;x<n/2+1;x++)
+       {
+           if(n%x==0)
+           {
+               k--;
+               if(k==0)
+               {
+                   return x;
+               }
+           }
         }
-        if(ans.size()<k)   //if size is less than k
-        {
-            return -1;
-        }
-        return ans[k-1];
+      return k==1 ? n :-1;
     }
 };
 
