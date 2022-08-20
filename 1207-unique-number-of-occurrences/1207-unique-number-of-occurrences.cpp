@@ -3,28 +3,20 @@ class Solution
 public:
     bool uniqueOccurrences(vector<int>& arr) 
     {
-        //declaring map to count the frequency of elements
-        map<int,int> mp;
-        
-        //declaring a vector to store the frequency of elements
-        vector<int> count;
-        
+        unordered_map<int,int> mp;
+        vector<int> ans;
         for(int i=0;i<arr.size();i++)
         {
             mp[arr[i]]++;
         }
-        
-        //storing the frequency in the vector
         for(auto x:mp)
         {
-            count.push_back(x.second);
+            ans.push_back(x.second);
         }
-        
-        sort(count.begin(),count.end());
-        
-        for(int i=0;i<count.size()-1;i++)
+        sort(ans.begin(),ans.end());
+        for(int i=0;i<ans.size()-1;i++)
         {
-            if(count[i]==count[i+1])
+            if(ans[i]==ans[i+1])
             {
                 return false;
             }
