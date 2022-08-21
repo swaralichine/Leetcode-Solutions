@@ -12,8 +12,10 @@ public:
            lastindex[s[i]-'a']=i;                          
         }
         vector<int> ans;
+        
         int start=0;
-        int end=0;                      
+        int end=0; 
+        
         for(int i=0;i<s.size();i++)
         {
            end=max(end,lastindex[s[i]-'a']);
