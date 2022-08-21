@@ -4,34 +4,31 @@
 class Solution 
 {
 public:
-    bool search(vector<vector<char>>& board,int i,int j,string& word,int idx,vector<vector<bool>>& visited)
+    bool search(vector<vector<char>>& board,int i,int j,string& word,int idx)
     {
         if(idx==word.length()-1)
         {
             return true;
         }
-        visited[i][j]=true;
-        
+        board[i][j]-=65;
         //applying DFS
-        if(i>0 && !visited[i-1][j] && board[i-1][j]==word[idx+1] && search(board,i-1,j,word,idx+1,visited))
+        if(i>0 && board[i-1][j]==word[idx+1] && search(board,i-1,j,word,idx+1))
         {
             return true;
         }
-        if(j>0 && !visited[i][j-1] && board[i][j-1]==word[idx+1] && search(board,i,j-1,word,idx+1,visited))
+        if(j>0 && board[i][j-1]==word[idx+1] && search(board,i,j-1,word,idx+1))
         {
             return true;
         }
-        if(i<board.size()-1 && !visited[i+1][j] && board[i+1][j]==word[idx+1] && search(board,i+1,j,word,idx+1,visited))
+        if(i<board.size()-1 && board[i+1][j]==word[idx+1] && search(board,i+1,j,word,idx+1))
         {
             return true;
         }
-        if(j<board[0].size()-1 && !visited[i][j+1] && board[i][j+1]==word[idx+1] && search(board,i,j+1,word,idx+1,visited))
+        if(j<board[0].size()-1 && board[i][j+1]==word[idx+1] && search(board,i,j+1,word,idx+1))
         {
             return true;
         }
-        
-        visited[i][j]=false;
-        
+        board[i][j]+=65;
         return false;
     }
     bool exist(vector<vector<char>>& board, string word) 
@@ -39,14 +36,11 @@ public:
         int r=board.size();
         int c=board[0].size();
         
-        //making a visited vector
-        vector<vector<bool>> visited(r,vector<bool>(c,false));
-        
         for(int i=0;i<r;i++)
         {
             for(int j=0;j<c;j++)
             {
-                if(board[i][j]==word[0] && search(board,i,j,word,0,visited))
+                if(board[i][j]==word[0] && search(board,i,j,word,0))
                 {
                     return true;
                 }
