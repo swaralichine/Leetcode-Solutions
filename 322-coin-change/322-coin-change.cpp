@@ -1,5 +1,6 @@
 //time complexity=O(s*n) s=amount,n=denomintaion
 //space complexity=O(s) extra space for memoization table
+//make a table
 class Solution 
 {
 public:
@@ -17,7 +18,6 @@ public:
               }
             }
         }
-        
         if(dp[amount]==amount+1)
             return -1;
         return dp[amount];
