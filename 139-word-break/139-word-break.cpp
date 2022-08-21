@@ -1,6 +1,7 @@
 //time complexity=O(n^3)
 //space complexity=O(n)
-class Solution {
+class Solution 
+{
 public:
     bool wordBreak(string s, vector<string>& wordDict) 
     {
@@ -13,7 +14,7 @@ public:
         {
             for (int j = 0; j < i; j++) 
             {
-                if (dp[j] and
+                if (dp[j] &&
                     word_set.find(s.substr(j, i - j)) != word_set.end()) //if word is found in the dictionary
                 {
                     dp[i] = true;
