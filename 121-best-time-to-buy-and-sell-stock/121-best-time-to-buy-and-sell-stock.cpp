@@ -1,5 +1,5 @@
-//Time Complexity = O(n)
-//Space Complexity = O(1)
+//Time Complexity = O(n) only a single pass is needed
+//Space Complexity = O(1) only two variables are used
 class Solution 
 {
 public:
