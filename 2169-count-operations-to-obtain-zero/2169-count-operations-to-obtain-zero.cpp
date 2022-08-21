@@ -4,7 +4,7 @@ public:
     int countOperations(int num1, int num2)
     {
         int count=0;
-        while(num1 !=0 && num2 != 0)
+        while(num1 !=0 and num2 != 0)
         {
            if(num1>=num2)
             {
