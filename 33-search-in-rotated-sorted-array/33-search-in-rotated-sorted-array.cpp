@@ -1,5 +1,5 @@
 //Binary Search
-//Time Complexity=O(logn)
+//Time Complexity=O(logn)  since we are using binary search
 //Space Compexity=O(1)
 class Solution 
 {
