@@ -1,9 +1,11 @@
+//time complexity=O(log(m+n)) m and n are lengths of the two vectors
+//space complexity=O(1)
 class Solution 
 {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) 
     {
-        double ans=0.0;
+        double ans;
         for(int i=0;i<nums2.size();i++)
         {
             nums1.push_back(nums2[i]);
