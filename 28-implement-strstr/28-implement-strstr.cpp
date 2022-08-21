@@ -1,3 +1,5 @@
+//time complexity=O(mn) m=length of haystack,n=length of needle
+//space complexity=O(1)
 class Solution 
 {
 public:
