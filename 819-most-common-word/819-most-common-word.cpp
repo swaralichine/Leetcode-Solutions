@@ -5,7 +5,7 @@ class Solution
 public:
     string mostCommonWord(string paragraph, vector<string>& banned) 
     {
-        unordered_map<string,int> ban;
+        unordered_map<string,int> ban;   //storing the frequency of banned words
         for(int i=0;i<banned.size();i++)
         {
             ban[banned[i]]++;
@@ -19,7 +19,7 @@ public:
         {
             string word="";
             
-            while(i<paragraph.length() && isalpha(paragraph[i]))
+            while(i<paragraph.length() && isalpha(paragraph[i]))   //converting all the letters to lower case
             {
                 paragraph[i]=tolower(paragraph[i]);
                 word.push_back(paragraph[i]);
