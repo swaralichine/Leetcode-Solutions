@@ -10,7 +10,7 @@ public:
         {
             return s;
         }
-        int max_len=1;
+        int long_palin=1;
         int n=s.length();
         
         int start=0;
@@ -34,9 +34,9 @@ public:
                 }
             }
             int len=right-left-1;
-            if(len > max_len)
+            if(len > long_palin)
             {
-                max_len=len;
+                long_palin=len;
                 start=left+1;
                 end=right-1;
             }
@@ -59,13 +59,13 @@ public:
                 }
             }
             int len=right-left-1;
-            if(len > max_len)
+            if(len > long_palin)
             {
-                max_len=len;
+                long_palin=len;
                 start=left+1;
                 end=right-1;
             }
         }
-        return s.substr(start,max_len);
+        return s.substr(start,long_palin);
     }
 };
