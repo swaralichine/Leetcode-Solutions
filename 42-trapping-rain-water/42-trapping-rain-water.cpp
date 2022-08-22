@@ -8,8 +8,10 @@ public:
     {
     int n = height.size();
     int left = 0, right = n - 1;
+        
     int ans = 0;
     int maxLeft = 0, maxRight = 0;
+        
     while (left <= right) 
     {
        if(height[left] <= height[right]) 
@@ -34,10 +36,10 @@ public:
          {
            ans += maxRight - height[right];
          }
-         right--;
+          right--;
          }
      }
-  return ans;
+      return ans;
     }
 };
 
