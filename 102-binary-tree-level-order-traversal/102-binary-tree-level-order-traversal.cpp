@@ -12,12 +12,13 @@
 //BFS
 //Time Complexity = O(n)
 //Space Complexity = O(n)
+//using BFS(queue)
 class Solution
 {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) 
     {
-        if(!root)
+        if(root==nullptr)
         {
             return{};
         }
@@ -30,6 +31,7 @@ public:
         {
             int n=q.size();
             vector<int> a;
+            
             while(n--)
             {
                 TreeNode* t=q.front();
