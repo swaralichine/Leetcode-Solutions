@@ -1,5 +1,6 @@
 //time complexity=O(1)
 //space complexity=O(n)
+//use map+stack
 class FreqStack 
 {
 public:
