@@ -11,6 +11,7 @@ public:
             return true;
         }
         board[i][j]-=65;
+        
         //applying DFS
         if(i>0 && board[i-1][j]==word[idx+1] && search(board,i-1,j,word,idx+1))
         {
