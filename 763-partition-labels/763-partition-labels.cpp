@@ -19,7 +19,7 @@ public:
         for(int i=0;i<s.size();i++)
         {
            end=max(end,lastindex[s[i]-'a']);
-           if(i == end)
+           if(i == end)   //the pointer has also reached the max end means we have traversed the maximum substring with all repeating characters
            {
                ans.emplace_back(i-start+1);
                start=i+1;
