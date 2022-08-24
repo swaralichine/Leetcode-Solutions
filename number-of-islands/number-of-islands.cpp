@@ -12,6 +12,7 @@ public:
         //make the current cell zero to mark it visited (in order to not visit it again)
         grid[x][y]=0;
         
+        //travel all 4 directions 
         dfs(grid,x-1,y);
         dfs(grid,x+1,y);
         dfs(grid,x,y-1);
