@@ -21,7 +21,7 @@ public:
            end=max(end,lastindex[s[i]-'a']);
            if(i == end)   //the pointer has also reached the max end means we have traversed the maximum substring with all repeating characters
            {
-               ans.emplace_back(i-start+1);
+               ans.push_back(i-start+1);
                start=i+1;
            }
         }
