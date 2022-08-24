@@ -22,7 +22,7 @@ public:
            if(i == end)   //the pointer has also reached the max end means we have traversed the maximum substring with all repeating characters
            {
                ans.emplace_back(i-start+1);
-               start=i+1;   //start traversing the new paragraph from either start=i+1 or end=i+1
+               start=i+1;   //start traversing the new paragraph from start=i+1
            }
         }
         return ans;
