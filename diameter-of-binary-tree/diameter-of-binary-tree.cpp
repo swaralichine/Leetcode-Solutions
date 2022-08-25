@@ -9,27 +9,29 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
+//time complexity=O(n)
+//space complexity=O(n)
 class Solution 
 {
 private:
-    int height(TreeNode* root, int&diamter)  //pass value by reference
+    int solve(TreeNode* root, int&diameter)  //pass value by reference
     {
-         if(root == NULL) 
-              return 0;
-
-        int lh = height(root -> left, diamter);
-        int rh = height(root -> right, diamter);
-
-        diamter = max(diamter, (lh + rh));   //distance between two leaves
-
-        return max(lh , rh) +1;
+         if(root == NULL)
+         {
+             return 0;
+         }
+        int left_height=solve(root->left,diameter);
+        int right_height=solve(root->right,diameter);
+        
+        diameter=max(diameter,left_height+right_height);
+        
+        return max(left_height,right_height)+1;
     }
     public:
     int diameterOfBinaryTree(TreeNode* root) 
-        {
-         int diamter =0;
-         height(root,diamter);
-         return diamter;
+     {
+         int diameter=0;
+         solve(root,diameter);
+         return diameter;
      }
 };
