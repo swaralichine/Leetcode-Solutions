@@ -12,6 +12,7 @@ public:
         //make the current cell zero to mark it visited (in order to not visit it again)
         grid[x][y]=0;
         
+        //travel all 4 directions(dfs)
         dfs(grid,x-1,y);
         dfs(grid,x+1,y);
         dfs(grid,x,y-1);
@@ -23,7 +24,7 @@ public:
         int n=grid.size();
         int m=grid[0].size();
         
-        int noofislands=0;
+        int no_of_islands=0;
         
         for(int i=0;i<n;i++)
         {
@@ -31,11 +32,11 @@ public:
             {
                 if(grid[i][j]=='1')
                 {
-                    noofislands++;
+                    no_of_islands++;
                     dfs(grid,i,j);   //check the neighboring cells to club them together
                 }
             }
         }
-        return noofislands;
+        return no_of_islands;
     }
 };
