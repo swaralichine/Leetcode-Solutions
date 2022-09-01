@@ -33,7 +33,7 @@ public:
             }
             if(flag == true)
             {
-                ans=ans+words[i].size();
+                ans=ans+words[i].size();   //adding the length to the answer
             }
         }
         return ans;
