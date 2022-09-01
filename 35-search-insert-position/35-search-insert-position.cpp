@@ -6,23 +6,26 @@ class Solution
 public:
     int searchInsert(vector<int>& nums, int target) 
     {
-        int mid,left=0,right=nums.size()-1;
-        while(left<=right)
+        int left=0;
+        int right=nums.size()-1;
+        
+        while(left <= right)
         {
-            mid=left+(right-left)/2;
+            int mid=left+(right-left)/2;
+            
             if(nums[mid] == target)
             {
                 return mid;
             }
-            else if(nums[mid] > target)
+            else if(nums[mid] > target)   //traversing left hand side
             {
                 right=mid-1;
             }
-            else
+            else     //traversing right hand side
             {
                 left=mid+1;
             }
         }
-        return left;
+        return left;    
     }
 };
