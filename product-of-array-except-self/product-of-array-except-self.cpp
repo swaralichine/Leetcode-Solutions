@@ -1,6 +1,7 @@
 //time complexity=O(n)
 //space complexity=O(1)
 //ans[i]=left[i-1]*right[i+1]
+//based on prefix sum
 class Solution 
 {
 public:
@@ -17,7 +18,7 @@ public:
         //we traverse from left to right and find the cumulative multiplication
         for(int i=0;i<nums.size();i++)
         {
-            product*=nums[i];
+            product=product*nums[i];
             ans.push_back(product);
         }
         //traverse from right and update the ans vector
@@ -25,7 +26,7 @@ public:
         for(int i=n-1;i>0;i--)
         {
             ans[i]=ans[i-1]*product;
-            product*=nums[i];
+            product=product*nums[i];
         }
         ans[0]=product;   //corner case
         
