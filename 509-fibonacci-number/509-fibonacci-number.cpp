@@ -1,3 +1,5 @@
+//time complexity=O(2^n)
+//space complexity=O(n)
 class Solution 
 {
 public:
