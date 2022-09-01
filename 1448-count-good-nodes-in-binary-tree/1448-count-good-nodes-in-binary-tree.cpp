@@ -1,5 +1,7 @@
-
-class Solution {
+//time complexity=O(n)
+//space complexity=O(logn)
+class Solution 
+{
 public:
     
     int count = 0;
@@ -31,7 +33,8 @@ public:
         dfs(root -> right, maxi);
     }
     
-    int goodNodes(TreeNode* root) {
+    int goodNodes(TreeNode* root)
+    {
         
         if(root == NULL)
             return 0;
