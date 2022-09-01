@@ -14,19 +14,22 @@ public:
     {
         int low=1;
         int high=n;
+        
         while(low<=high)
         {
             int mid=low+(high-low)/2;
+            
             int res=guess(mid);
-            if(res==0)
+            
+            if(res==0)   //guess is right
             {
                 return mid;
             }
-            else if(res<0)
+            else if(res<0)  //traverse to the right half
             {
                 high=mid-1;
             }
-            else
+            else     //traverse to the left half
             {
                 low=mid+1;
             }
