@@ -26,6 +26,6 @@ public:
                 left=mid+1;
             }
         }
-        return left;    
+        return left; //returning the position where it should be   
     }
 };
