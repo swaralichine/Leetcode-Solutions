@@ -1,3 +1,5 @@
+//time complexity=O(rc)
+//space complexity=O(rc)
 class Solution 
 {
 public:
@@ -31,6 +33,5 @@ public:
         grid[i][j]=0;
         
         return 1+dfs(grid,i+1,j)+dfs(grid,i-1,j)+dfs(grid,i,j+1)+dfs(grid,i,j-1);
-        
     }
 };
