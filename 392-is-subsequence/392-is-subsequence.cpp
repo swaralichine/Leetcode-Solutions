@@ -4,15 +4,15 @@ public:
     bool isSubsequence(string s, string t) 
     {
         int i=0,j=0;
-        while(i < t.size() and j<s.size())
+        while(i < s.size() and j<t.size())
         {
-            if(t[i] == s[j])
+            if(s[i] == t[j])  
             {
-                j++;
+                i++;
             }
-            i++;
+            j++;   //j pointer is for the longer string
         }
-        if(j==s.size())
+        if(i==s.size())   //i pointer is for the smaller string
         {
             return true;
         }
