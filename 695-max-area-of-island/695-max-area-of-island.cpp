@@ -5,8 +5,10 @@ public:
     int maxAreaOfIsland(vector<vector<int>>& grid)
     {
         int maxarea=0;
+        
         int n=grid.size();
         int m=grid[0].size();
+        
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
@@ -22,7 +24,7 @@ public:
     private:
     int dfs(vector<vector<int>>& grid,int i,int j)
     {
-        if(i<0 || i>=grid.size() || j<0 || j>=grid[0].size() || grid[i][j] !=            1)
+        if(i<0 || i>=grid.size() || j<0 || j>=grid[0].size() || grid[i][j] != 1)
         {
             return 0;
         }
