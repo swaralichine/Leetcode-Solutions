@@ -1,16 +1,45 @@
+//Sorting and Array Approach!!
+//Comparator Used for sorting!!
+
+//Complexity Analysis;-
+//Time Complexity:- O(nlogn)
+//Space Complexity:- O(1)
+
 class Solution {
 public:
-    int ct[100002];
-    int numberOfWeakCharacters(vector<vector<int>>& a) {
-        int ans=0,ma=0;
-        for(int i=0;i<a.size();++i){
-            ct[a[i][0]]=max(a[i][1],ct[a[i][0]]);
-            ma=max(ma,a[i][0]);
-        }
-        for(int i=ma-1;i>0;--i)
-            ct[i]=max(ct[i],ct[i+1]);
-        for(int i=0;i<a.size();++i)
-            if(ct[a[i][0]+1]>a[i][1])++ans;
-        return ans;
+
+// Comparator Fun for sorting according to the first and second value 
+static bool cmp(vector<int> &x, vector<int> &y) {
+
+    if(x[0]==y[0]){
+        return x[1]>y[1];
     }
+    else{
+        return x[0]<y[0];
+    }
+}
+int numberOfWeakCharacters(vector<vector<int>>& properties) {
+    int count=0;
+    
+    int n=properties.size();
+    
+    sort(properties.begin(),properties.end(),cmp);
+    
+    int maxi=properties[n-1][1];
+    
+	// Actual Implementation
+	// Run for loop from the end so that we can easily check whether current defence value is greater than the previous maximum one or not.
+	
+    for(int j=n-2;j>=0;j--){
+        if(properties[j][1] < maxi){
+            count++;
+             
+        }
+       maxi=max(maxi,properties[j][1]);
+    }
+    
+	//returning the number of weak characters
+    return count;
+   
+}
 };
