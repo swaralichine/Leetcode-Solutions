@@ -1,9 +1,11 @@
-class Solution {
+//find duplicates if the content of the file is the same
+//time complexity = O(n*l) n=size of the array and l=size of the string parsed
+//space complexity = O(n*l)
+class Solution 
+{
 public:
-    vector<vector<string>> findDuplicate(vector<string>& paths) {
-        
-        ios_base::sync_with_stdio(0);
-        cin.tie(0); cout.tie(0);
+    vector<vector<string>> findDuplicate(vector<string>& paths) 
+    {   
         map<string,vector<string>> maap;
         
         for(int i = 0; i < paths.size(); i++){
