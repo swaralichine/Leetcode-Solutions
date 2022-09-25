@@ -21,7 +21,7 @@ public:
         // Now delete one of the days as it has been attended.
         
         
-        priority_queue< int , vector<int> , greater<int>> pq;
+        priority_queue< int , vector<int> , greater<int>> pq; //min heap
         
         sort(nums.begin() , nums.end());
         
