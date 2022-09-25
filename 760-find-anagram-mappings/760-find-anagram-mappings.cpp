@@ -7,7 +7,7 @@ public:
     vector<int> anagramMappings(vector<int>& nums1, vector<int>& nums2) 
     {
        vector<int> ans=nums1;
-       map<int,int> mp;
+       unordered_map<int,int> mp;
         
        for(int i=0;i<nums2.size();i++)
        {
