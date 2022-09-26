@@ -17,13 +17,13 @@ public:
         
        for(int i=1;i<intervals.size();i++)
        {
-           if(ans.back()[1] >= intervals[i][0])
+           if(ans.back()[1] >= intervals[i][0])   //end time of the previous one is greater than the start time of the current one
            {
                ans.back()[1]=max(ans.back()[1],intervals[i][1]);
            }
            else
            {
-               ans.push_back(intervals[i]);
+               ans.push_back(intervals[i]);  //push the start time
            }
        }
         return ans;
