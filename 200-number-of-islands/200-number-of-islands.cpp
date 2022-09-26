@@ -1,4 +1,4 @@
-//time complexity=O(rc)
+//time complexity=O(rc) r=row,c=columns
 //space complexity=O(rc)
 class Solution {
 public:
@@ -12,7 +12,7 @@ public:
         //make the current cell zero to mark it visited (in order to not visit it again)
         grid[x][y]=0;
         
-        //travel all 4 directions(dfs)
+        //travel all 4 directions adjacent to the cell(dfs)
         dfs(grid,x-1,y);
         dfs(grid,x+1,y);
         dfs(grid,x,y-1);
@@ -21,8 +21,8 @@ public:
         
     int numIslands(vector<vector<char>>& grid) 
     { 
-        int n=grid.size();
-        int m=grid[0].size();
+        int n=grid.size();   //row size
+        int m=grid[0].size();   //column size
         
         int no_of_islands=0;
         
