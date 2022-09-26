@@ -55,7 +55,7 @@ public:
         {
             return;
         }
-        if(node->left==nullptr && node->right==nullptr)
+        if(node->left==nullptr && node->right==nullptr)   //it is a leaf
         {
             ans.push_back(node->val);
             return;
