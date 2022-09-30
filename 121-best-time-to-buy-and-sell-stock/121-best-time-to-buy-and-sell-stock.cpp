@@ -9,10 +9,12 @@ public:
         int maxprofit=0;
         for(int i=0;i<prices.size();i++)
         {
+            //first find the min price
             if(minprice>prices[i])
             {
                 minprice=prices[i];
             }
+            //then find the maximum profit
             else if(prices[i]-minprice>maxprofit)
             {
                 maxprofit=prices[i]-minprice;
