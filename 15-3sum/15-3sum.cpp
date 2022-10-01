@@ -6,32 +6,35 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int>& nums)
     {
-       int n=nums.size();
+       int n = nums.size();
+        
        if(n<3)
        {
            return {};
        }
         sort(nums.begin(),nums.end());
+        
         vector<vector<int>> ans;
         
         for(int i=0;i<n-2;i++)
         {
             if(i==0 || nums[i]!=nums[i-1])
             {
-                    int j=i+1;
-                    int k=n-1;
+                    int j = i+1;  //start plus one to i
+                    int k = n-1; //start from the end
                 
                     while(j<k)
                     {
-                        int sum=nums[i]+nums[j]+nums[k];
-                        if(sum==0)
+                        int sum = nums[i]+nums[j]+nums[k];
+                        
+                        if(sum == 0)
                         {
                             ans.push_back({nums[i],nums[j],nums[k]});
-                            while(j<k && nums[j]==nums[j+1])
+                            while(j<k && nums[j]==nums[j+1])  //go ahead until they are same
                             {
                                 j++;
                             }
-                            while(j<k && nums[k]==nums[k-1])
+                            while(j<k && nums[k]==nums[k-1])  //go ahead until they are same
                             {
                                 k--;
                             }
@@ -40,11 +43,11 @@ public:
                         }
                         else if(sum>0)
                         {
-                            k--;
+                            k--;  //shift the end point
                         }
                         else
                         {
-                            j++;
+                            j++;   //move closer to the end point
                         }
                     }
                 }
