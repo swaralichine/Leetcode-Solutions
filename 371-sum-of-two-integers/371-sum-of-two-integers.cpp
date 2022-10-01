@@ -1,18 +1,29 @@
 //Time Complexity=O(1)
-//Space Complexity=O(n)
+//Space Complexity=O(1)
 
-class Solution
+class Solution 
 {
 public:
-int getSum(int a, int b) 
- {
-    vector<int> v;
-    //putting both a and b in a dynamic array
-    v.push_back(a);
-    v.push_back(b);
-    
-    //calculating the sum of numbers between beginning and end position , with inital value of sum taken as "zero"
-    int ans = accumulate(v.begin(),v.end(),0);
-    return ans;
- }
+    int getSum(int a, int b) 
+    {
+        
+        // take b as carry and run the loop till b becomes 0
+        
+        // (a ^ b) will give sum
+        
+        // (a & b) << 1 will give carry
+        
+        while(b)
+        {
+            int sum = (a ^ b);
+            
+            int carry = (unsigned) (a & b) << 1;
+            
+            a = sum;
+            
+            b = carry;
+        }
+        
+        return a;
+    }
 };
