@@ -26,6 +26,7 @@ public:
     bool findTarget(TreeNode* root, int k) 
     {
         solve(root);
+        
         int i=0;
         int j=ans.size()-1;
         while(i<j)
