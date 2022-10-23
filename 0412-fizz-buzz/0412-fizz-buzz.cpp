@@ -1,4 +1,6 @@
-
+//naive approach
+//time complexity=O(n)
+//Space complexity=O(1)
 class Solution
 {
     public:
