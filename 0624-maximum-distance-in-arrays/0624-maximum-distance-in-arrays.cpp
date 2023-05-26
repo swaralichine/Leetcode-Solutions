@@ -11,7 +11,7 @@ public:
         
         for(int i=1;i<arr.size();i++)
         {
-            max_dist = max
+            max_dist = max  //can be found two ways
             (
             max(abs(max_val - arr[i].front()),max_dist),
             max(abs(min_val - arr[i].back()),max_dist)
