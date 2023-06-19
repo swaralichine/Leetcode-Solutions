@@ -1,18 +1,18 @@
-//using two pointer approach
+
 //time complexity=O(n)
 //space complexity=O(1)
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
-        int cnt=0;
+        int ans=0;
         for (int i=0;i<nums.size();i++)
         {
             if (nums[i]!=val)
             {
-            nums[cnt]=nums[i];
-            cnt++;
+            nums[ans]=nums[i]; 
+            ans++;   //increase the count of the index storing the unmatched values
             }
         }
-        return cnt;
+        return ans;    //return the count of unmatched values
     }
 };
