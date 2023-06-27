@@ -14,7 +14,7 @@ public:
                 {
                     pq.push({sum,{nums1[i],nums2[j]}});
                 }
-                else if(sum<pq.top().first)
+                else if(sum < pq.top().first)   //current sum is less than the element sitting on top
                 {
                     pq.pop();
                     pq.push({sum,{nums1[i],nums2[j]}});
@@ -25,13 +25,13 @@ public:
                 }
             }
         }
-        vector<vector<int>> ans;
+        vector<vector<int>> ans;    //to store pairs
         while(!pq.empty())
         {
-            auto x=pq.top().second;
+            auto x = pq.top().second;    //elements
             pq.pop();
             
-            ans.push_back({x.first,x.second});
+            ans.push_back({x.first,x.second});    //store in vector array
         }
         return ans;
     }
