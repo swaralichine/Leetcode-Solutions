@@ -10,6 +10,8 @@
  * };
  */
 //recursive approach
+//time complexity = O(n)
+//space complexity = O(h)  h is the height of tree
 class Solution
 {
 public:
