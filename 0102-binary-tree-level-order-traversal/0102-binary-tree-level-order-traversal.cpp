@@ -14,31 +14,40 @@
 //Space Complexity = O(n)
 //using BFS(queue)
 
-
-
-class Solution {
+class Solution
+{
 public:
-    vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>> res{};
-        if(root == NULL) return res;
+    vector<vector<int>> levelOrder(TreeNode* root) 
+    {
+        vector<vector<int>> binarylevelordertraversal;
         
-        queue<TreeNode*> q{};
+        if(root == NULL)
+        {
+            return binarylevelordertraversal;
+        }
+        queue<TreeNode*> q;
         q.push(root);
         
         while(!q.empty())
         {
-            int sz = q.size();
-            vector<int> vec;
-            for(int i = 0; i < sz; i++) {
+            int n = q.size();
+            vector<int> v;
+            for(int i=0;i<n;i++)
+            {
                 TreeNode* curr = q.front();
                 q.pop();
-                vec.push_back(curr->val);
-                if(curr->left) q.push(curr->left);
-                if(curr->right) q.push(curr->right);
+                v.push_back(curr->val);
+                if(curr->left)
+                {
+                    q.push(curr->left);
+                }
+                if(curr->right)
+                {
+                    q.push(curr->right);
+                }
             }
-            res.push_back(vec);
+           binarylevelordertraversal.push_back(v); 
         }
-        return res;
+        return binarylevelordertraversal;
     }
 };
-
