@@ -36,9 +36,9 @@ public:
         }
         
         // we reached at the end of one of the list
-        if(list1) 
+        if(list1)  //if list1 still is there
             temp->next = list1;
-        if(list2) 
+        if(list2)    //if list2 is still there
             temp->next = list2;
         
         return dummy->next;
