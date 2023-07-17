@@ -12,22 +12,26 @@
 //space complexity = O(1)
 class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode* removeNthFromEnd(ListNode* head, int n) 
+    {
         if(head==NULL || head->next==NULL)
         return NULL;
 
         ListNode* fast=head;
         ListNode* slow=head;
 
-        while(n--){
+        while(n--)
+        {
             fast=fast->next;             //Takes the pointer to the nth node
 
         }
-        if(fast==NULL){
+        if(fast==NULL)
+        {
             return head->next;           //If Value of n is greater than no of nodes
         }
         
-        while(fast!=NULL && fast->next!=NULL){
+        while(fast!=NULL && fast->next!=NULL)
+        {
             fast=fast->next;
             slow=slow->next;
         }
