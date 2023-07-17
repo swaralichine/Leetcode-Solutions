@@ -10,28 +10,31 @@
  */
 //time complexity = O(L)
 //space complexity = O(1)
-class Solution
-{
+class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) 
-    {
-        ListNode* dummy = new ListNode();
-        dummy -> next = head;
-        
-        ListNode* slow = dummy;
-        ListNode* fast = dummy;
-                                                                                                                                                                            
-        for(int i=0;i<n;i++)   //Move till n steps
-        {
-            fast = fast -> next;
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if(head==NULL || head->next==NULL)
+        return NULL;
+
+        ListNode* fast=head;
+        ListNode* slow=head;
+
+        while(n--){
+            fast=fast->next;             //Takes the pointer to the nth node
+
         }
-        while(fast -> next != NULL)
-        {
-            fast = fast -> next;
-            slow = slow -> next;
+        if(fast==NULL){
+            return head->next;           //If Value of n is greater than no of nodes
         }
-        slow -> next = slow -> next -> next;
         
-        return dummy -> next;
-    }
+        while(fast!=NULL && fast->next!=NULL){
+            fast=fast->next;
+            slow=slow->next;
+        }
+        slow->next=slow->next->next;
+        return head;
+        
+        
+        }
+    
 };
