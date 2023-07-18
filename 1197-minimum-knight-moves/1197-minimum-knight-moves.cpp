@@ -1,18 +1,13 @@
 class Solution {
 public:
-    int minKnightMoves(int x, int y) {
-        return dfs(abs(x), abs(y));
+    unordered_map<string, int> mem;
+    int minKnightMoves(int x, int y) 
+    {
+        x = abs(x); y = abs(y);
+        auto key = to_string(x)+" "+to_string(y);
+        if (mem.count(key)) return mem[key];
+        if (x + y == 0) return 0;
+        else if (x + y == 2) return 2;
+        return mem[key] = 1 + min(minKnightMoves(x-1, y-2), minKnightMoves(x-2, y-1));
     }
-    
-    int dfs(int x, int y) { // x, y >= 0;
-        if(x + y == 0) return 0;
-        else if(x + y == 2) return 2;
-        else{
-            if(memo[x][y] == 0) memo[x][y] = min(dfs(abs(x - 1), abs(y - 2)), dfs(abs(x - 2), abs(y - 1))) + 1;
-            return memo[x][y];
-        };
-    }
-    
-private:
-    int memo[301][301];
 };
