@@ -25,7 +25,7 @@ public:
             fast=fast->next;             //Takes the pointer to the nth node
 
         }
-        if(fast==NULL)
+        if(fast==NULL)  //edge case when n was 1 ie remove last node
         {
             return head->next;           //If Value of n is greater than no of nodes
         }
@@ -38,7 +38,5 @@ public:
         slow->next=slow->next->next;
         return head;
         
-        
         }
-    
 };
