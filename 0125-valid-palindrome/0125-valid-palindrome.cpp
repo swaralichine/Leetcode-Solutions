@@ -1,4 +1,6 @@
-
+//two pointers approach
+//time complexity = O(n)
+//space complexity = O(1)
 class Solution 
 {
 public:
@@ -12,11 +14,14 @@ public:
                 {
                     ans += tolower(s[i]);
                 }
-                else if((s[i] >= 97 && s[i] <= 122) || (s[i] >= 48 && s[i] <= 57))                     {
+                else if((s[i] >= 97 && s[i] <= 122) || (s[i] >= 48 && s[i] <= 57)) 
+                {
                     ans += s[i];
                 }
             }
+        
         int start=0,end=ans.length()-1;
+        
         while(start<end)    //checking for palindrome
         {
             if(ans[start]!=ans[end])
