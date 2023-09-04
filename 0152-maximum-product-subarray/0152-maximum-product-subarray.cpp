@@ -3,19 +3,22 @@
 //Space Complexity=O(1)
 class Solution {
 public:
-    int maxProduct(vector<int>& nums) 
-    {
-        int maxi = -1e9;
-	    int pref = 1, suff = 1;
-        int n = nums.size();
-	    for(int i = 0; i < n; i++)
+    int maxProduct(vector<int>& nums) {
+     int r=nums[0];
+     int maxi=r;
+     int mini=r;
+        for(int i=1;i<nums.size();i++)
         {
-	        if(pref == 0) pref = 1;
-	        if(suff == 0) suff = 1;
-	        pref *= nums[i];
-	        suff *= nums[n - i - 1];
-	        maxi = max(maxi, max(pref, suff));
-	    }
-	    return maxi;
+            if(nums[i]<0)
+            {
+                int temp=maxi;
+                maxi=mini;
+                mini=temp;
+            }
+            maxi=max(nums[i],nums[i]*maxi);
+            mini=min(nums[i],nums[i]*mini);
+            r=max(r,maxi);
+        }
+        return r;
     }
 };
