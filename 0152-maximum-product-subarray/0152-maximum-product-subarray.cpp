@@ -1,9 +1,11 @@
 //Dynamic Programming
 //Time Complexity=O(N)
 //Space Complexity=O(1)
-class Solution {
+class Solution 
+{
 public:
-    int maxProduct(vector<int>& nums) {
+    int maxProduct(vector<int>& nums) 
+    {
      int r=nums[0];
      int maxi=r;
      int mini=r;
