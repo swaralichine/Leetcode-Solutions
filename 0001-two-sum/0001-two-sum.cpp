@@ -31,7 +31,7 @@ public:
         for(int i = 0; i<n ; i++)
         {
             int required = target - nums[i];
-            if(mp.find(required) != mp.end())
+            if(mp.find(required) != mp.end())  //if the element is found
             {
                 return {mp[required], i};
             }
