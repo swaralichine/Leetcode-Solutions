@@ -12,18 +12,14 @@ public:
         // (a ^ b) will give sum
         
         // (a & b) << 1 will give carry
-        
         while(b)
         {
-            int sum = (a ^ b);
-            
-            int carry = (unsigned) (a & b) << 1;
-            
-            a = sum;
-            
-            b = carry;
+        int sum = (a ^ b);
+        int carry = (unsigned) (a & b) << 1;
+        a=sum;
+        b=carry;
         }
-        
         return a;
     }
 };
+
