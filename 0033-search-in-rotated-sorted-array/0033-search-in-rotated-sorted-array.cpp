@@ -16,7 +16,7 @@ public:
             {
                 return mid;
             }
-            else if(nums[mid]>=nums[left])   //target is in left half
+            else if(nums[mid]>=nums[left])   //search for target in left half
             {
                 if(nums[left]<=target && target<nums[mid])
                 {
@@ -27,7 +27,7 @@ public:
                     left=mid+1;
                 }
             }
-            else  //target is in right half
+            else  //search for target right half
             {
                 if(nums[mid]<target && target<=nums[right])   
                 {
