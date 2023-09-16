@@ -10,7 +10,7 @@ public:
             return nums.size();
         }
         
-        map<int,int> mp;  //store count and index
+        map<int,int> mp;  //store index and count
         
         for(int x: nums)
         {
