@@ -10,7 +10,7 @@ public:
         unordered_map<int,int> mp;
         for(auto a:nums)
         {
-            //map will have value (number,frequency)
+            //map will have value (frequency,number)
             mp[a]++;
         }
         //creating a min heap in which each value will be a pair of form(frequency,number)
