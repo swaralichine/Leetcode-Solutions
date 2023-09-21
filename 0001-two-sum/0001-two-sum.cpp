@@ -23,7 +23,6 @@ class Solution
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
-        //vector<int> result;
         int n = nums.size();
         
         map<int, int> mp;
