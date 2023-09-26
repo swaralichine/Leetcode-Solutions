@@ -14,7 +14,7 @@ public:
             {
                 return false;
             }
-            max_reachable=max(max_reachable,nums[i]+i);
+            max_reachable = max(max_reachable,nums[i]+i);
         }
         return true;
     }
