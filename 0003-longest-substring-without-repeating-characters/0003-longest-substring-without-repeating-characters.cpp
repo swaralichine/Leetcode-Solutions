@@ -19,10 +19,10 @@ public:
                 start = dict[s[i]];  //break the string and start again
             }
             dict[s[i]]=i;  //else store its latest index in the dictionary
+
             maxlengthoflongestsubstring=max(maxlengthoflongestsubstring,i-start);
         }
         return maxlengthoflongestsubstring;
     }
 };
-
 
