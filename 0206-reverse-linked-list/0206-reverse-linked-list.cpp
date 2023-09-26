@@ -21,11 +21,12 @@ public:
         
         while(current!=nullptr)
         {
-            next=current->next;   //basically storing
-            current->next=previous;
-            previous=current;
-            current=next;
+          next = current -> next;  //basically storing
+          current -> next = previous;
+          previous = current;
+          current = next;  
         }
       return previous;
     }
 };
+   
