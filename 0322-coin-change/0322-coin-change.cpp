@@ -13,13 +13,13 @@ public:
         {
             for(int j=0;j<coins.size();j++)
             {
-                if(i>=coins[j])
+                if(i >= coins[j])
                 {
-                    dp[i]=min(dp[i],dp[i-coins[j]]+1);
+                    dp[i] = min(dp[i],dp[i-coins[j]]+1);
                 }
             }
         }
-        if(dp[amount]==amount+1)   //amount is exceeding the amount expected
+        if(dp[amount] == amount+1)   //amount is exceeding the amount expected
         {
             return -1;
         }
