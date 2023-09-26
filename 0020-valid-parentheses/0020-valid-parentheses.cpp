@@ -37,6 +37,6 @@ public:
                 }
             }
         }
-        return st.empty();  //return true only if the stack is balanced
+        return st.empty();  //return true only if the stack is empty ie balanced
     }
 };
