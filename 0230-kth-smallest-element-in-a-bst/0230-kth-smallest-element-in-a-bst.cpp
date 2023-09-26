@@ -27,7 +27,7 @@ public:
     int kthSmallest(TreeNode* root, int k) 
     {
         vector<int> v;
-        solve(root,k,v);
+        solve(root, k, v);
         sort(v.begin(),v.end());
         return v[k-1];
     }
