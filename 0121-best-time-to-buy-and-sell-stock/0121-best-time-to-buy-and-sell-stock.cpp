@@ -6,23 +6,18 @@ public:
     int maxProfit(vector<int>& prices)
     {
         int minprice = INT_MAX;
-        int maxprofit=0;
-
-        //first find the minimum price
+        int maxprofit = 0;
         for(int i=0;i<prices.size();i++)
         {
-            if(minprice>prices[i])
+            if(minprice > prices[i])
             {
-                minprice=prices[i];
+                minprice = prices[i];
             }
-            //find the maxprofit
             else if(prices[i] - minprice > maxprofit)
             {
-                maxprofit = prices[i] - minprice; 
+                maxprofit = prices[i] - minprice;
             }
         }
         return maxprofit;
     }
 };
-
-            
