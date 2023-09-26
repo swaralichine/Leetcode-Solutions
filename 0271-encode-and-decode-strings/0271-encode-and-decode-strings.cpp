@@ -25,7 +25,7 @@ public:
             int strN = s[i++] + 100;
             string str = s.substr(i, strN);
             strs.push_back(str);
-            i += strN;
+            i = i + strN;
         }
         return strs;
     }
