@@ -13,7 +13,7 @@ public:
        while(left < right)
        {
           int index_diff = right - left;  //these are the indices
-          ans=max(ans,min(height[left],height[right])*index_diff);  //logic
+          ans = max(ans, min(height[left],height[right])*index_diff);  //logic
            
           if(height[right] > height[left])
           {
